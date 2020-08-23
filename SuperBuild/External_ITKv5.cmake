@@ -112,6 +112,7 @@ if(NOT DEFINED ${extProjName}_DIR AND NOT ${USE_SYSTEM_${extProjName}})
   find_package(ZLIB REQUIRED)
 
   set(${proj}_CMAKE_OPTIONS
+      -DITK_USE_SYSTEM_PNG=ON
       -DBUILD_TESTING:BOOL=OFF
       -DBUILD_EXAMPLES:BOOL=OFF
       -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_BINARY_DIR}/staging
@@ -149,7 +150,7 @@ if(NOT DEFINED ${extProjName}_DIR AND NOT ${USE_SYSTEM_${extProjName}})
 
 
   ### --- End Project specific additions
-  set(${proj}_REPOSITORY ${git_protocol}://github.com/InsightSoftwareConsortium/ITK.git)
+  set(${proj}_REPOSITORY https://github.com/Mon-ius/ITK)
   # set(${proj}_REPOSITORY ${git_protocol}://github.com/stnava/ITK.git)
   set(${proj}_GIT_TAG  1e708db2f586997e408cfdc2cea5114ae5575892)  # Type -> Enum  Update to ITKv5rc02 2020-03-18
   set(ITK_VERSION_ID ITK-5.1) ### NOTE: When updating GIT_TAG, also update ITK_VERSION_ID
